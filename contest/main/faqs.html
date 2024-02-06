@@ -1,0 +1,1661 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="csrf-token" content="y97TPLcyPglBZcTjbRN7gqz3LutQ47aNX7unxevi">
+        <!-- Mobile Specific Metas
+        ================================================== -->
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+
+        <title>Correct-Fan</title>
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+	    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&amp;family&#x3D;Source+Sans+Pro:wght@400;700&amp;display&#x3D;swap" rel="stylesheet">
+            
+        
+        <!-- Styles -->
+        <link rel="stylesheet" href="/css/app2.css">
+        <link rel="stylesheet" href="/css/app.css">
+        
+        <link href="../../css/bootstrap.css" rel="stylesheet">
+        <link href="../../css/all.min.css" rel="stylesheet">
+        <link href="../../css/simple-line-icons.css" rel="stylesheet">
+        <link href="../../css/magnific-popup.css" rel="stylesheet">
+        <link href="../../css/slick.css" rel="stylesheet">
+
+        <!-- Template CSS-->
+        <link href="../../css/style-soccer2.css" rel="stylesheet">
+
+        <!-- Custom CSS-->
+        <link href="../../css/custom.css" rel="stylesheet">
+        <!-- Livewire Styles -->
+<style >
+    [wire\:loading], [wire\:loading\.delay], [wire\:loading\.inline-block], [wire\:loading\.inline], [wire\:loading\.block], [wire\:loading\.flex], [wire\:loading\.table], [wire\:loading\.grid], [wire\:loading\.inline-flex] {
+        display: none;
+    }
+
+    [wire\:loading\.delay\.shortest], [wire\:loading\.delay\.shorter], [wire\:loading\.delay\.short], [wire\:loading\.delay\.long], [wire\:loading\.delay\.longer], [wire\:loading\.delay\.longest] {
+        display:none;
+    }
+
+    [wire\:offline] {
+        display: none;
+    }
+
+    [wire\:dirty]:not(textarea):not(input):not(select) {
+        display: none;
+    }
+
+    input:-webkit-autofill, select:-webkit-autofill, textarea:-webkit-autofill {
+        animation-duration: 50000s;
+        animation-name: livewireautofill;
+    }
+
+    @keyframes livewireautofill { from {} }
+</style>
+            
+        <!-- Scripts -->
+        
+        <script src="../../js/jquer.js" ></script>
+        <script src="../../js/custom.js" ></script>
+        <script src="../../js/app.js" defer></script>
+        <link href="../../css/jquery.dataTables.min.css" rel="stylesheet">  
+        
+<script src="../../js/jquery-3.3.1.js"></script>
+<script src="../../js/jquery.dataTables.min.js"></script>
+
+
+        <script type="text/javascript">
+                //Gameboost
+                var gameboost = 0;
+                var gameboostadd = 0;
+                var gamecaptain = '';
+                var mycaptain = 0;
+
+            function countme(conid, games){
+                var countDownDate = parseInt(games) * 1000; //new Date("Jan 5, 2023 15:37:25").getTime();
+
+                // Update the count down every 1 second
+                var x = setInterval(function() {
+
+                // Get today's date and time
+                var now = new Date().getTime();
+                    
+                // Find the distance between now and the count down date
+                var distance = countDownDate - now;
+                    
+                // Time calculations for days, hours, minutes and seconds
+                var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                    
+                // Output the result in an element with id="demo"
+                var countdown =  gettwono(days) + "d " +  gettwono(hours) + "h "
+                +  gettwono(minutes) + "m " +  gettwono(seconds) + "s ";
+                setDisplay(conid, countdown);
+                    
+                // If the count down is over, write some text 
+                if (distance < 0) {
+                    clearInterval(x);
+                    var countdown = 'Completed';
+                    setDisplay(conid, countdown);
+                }
+                }, 1000);
+            }
+
+            function setDisplay(className, displayValue) {
+                var items = document.getElementsByClassName(className);
+                for (var i=0; i < items.length; i++) {
+                    items[i].innerHTML = displayValue;
+                }
+            }
+
+            function countme2(conid, games){
+                var countDownDate = parseInt(games) * 1000; //new Date("Jan 5, 2023 15:37:25").getTime();
+
+                // Update the count down every 1 second
+                var x = setInterval(function() {
+
+                // Get today's date and time
+                var now = new Date().getTime();
+                    
+                // Find the distance between now and the count down date
+                var distance = countDownDate - now;
+                    
+                // Time calculations for days, hours, minutes and seconds
+                var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                var completed = "COMPLETED";
+                    
+                // Output the result in an element with id="demo"
+               // document.getElementById(conid).innerHTML = days + "d " + hours + "h "
+                //+ minutes + "m " + seconds + "s ";
+
+                document.getElementById(conid).innerHTML = '<li class="timer_text" id="timer_id"> '+  gettwono(days) +' : <br><span class="timer_inner">DAYS</span></li>'
+                                +'<li class="timer_text"> '+  gettwono(hours) +' : <br><span class="timer_inner">HRS</span></li>'
+                                +'<li class="timer_text"> '+  gettwono(minutes) +' : <br><span class="timer_inner">MINS</span></li>'
+                                +'<li class="timer_text"> '+  gettwono(seconds) +' <br><span class="timer_inner">SECS</span></li>';
+                    
+                // If the count down is over, write some text 
+                if (distance < 0) {
+                    clearInterval(x);
+                    document.getElementById(conid).innerHTML = '<li class="timer_text" id="timer_id">'+ completed +'</li>';
+                }
+                }, 1000);
+            }
+
+            function increment() {
+                var data = Number(document.getElementById("amount").value);
+                data = data + 1;
+                document.getElementById("amount").value = data;
+                showboostcharges(data);
+            }
+            //creation of decrement function
+            function decrement() {
+                var data = Number(document.getElementById("amount").value);
+                data = data - 1;
+                if(data < 1){
+                    data = 1;
+                }
+                document.getElementById("amount").value = data;
+                showboostcharges(data);
+            }
+
+            function showboostcharges(boost) {
+                var data = Number(document.getElementById("boostperunit").value);
+                var charges = data * boost;
+                document.getElementById("boostcharges").innerHTML = charges;
+            }
+
+            function gettwono($number){
+                var myNumber = $number;
+                var dec = myNumber - Math.floor(myNumber);
+                myNumber = myNumber - dec;
+                var formattedNumber = ("0" + myNumber).slice(-2) + dec.toString().substr(1);
+                return formattedNumber;
+            }
+
+            function showMyLeagues() {
+                document.getElementById("dashboard_options_two").classList.add("dashboard_options_active");
+                document.getElementById("dashboard_options_one").classList.remove("dashboard_options_active");
+                document.getElementById("myLeagues").style.display = "block";
+                document.getElementById("myContest").style.display = "none";
+            }
+            function showMyContest() {
+                document.getElementById("dashboard_options_one").classList.add("dashboard_options_active");
+                document.getElementById("dashboard_options_two").classList.remove("dashboard_options_active");
+                document.getElementById("myContest").style.display = "block";
+                document.getElementById("myLeagues").style.display = "none";
+            }
+
+            /* Ongoing League Contests */
+            function showTrending() {
+                document.getElementById("trending_click").classList.add("dashboard_options_active_two");
+                document.getElementById("newest_click").classList.remove("dashboard_options_active_two");
+                document.getElementById("my_leagues_click").classList.remove("dashboard_options_active_two");
+                document.getElementById("trending").style.display = "block";
+                document.getElementById("newest").style.display = "none";
+                document.getElementById("my_leagues").style.display = "none";
+            }
+            function showMy_Leagues() {
+                document.getElementById("my_leagues_click").classList.add("dashboard_options_active_two");
+                document.getElementById("trending_click").classList.remove("dashboard_options_active_two");
+                document.getElementById("newest_click").classList.remove("dashboard_options_active_two");
+                document.getElementById("my_leagues").style.display = "block";
+                document.getElementById("trending").style.display = "none";
+                document.getElementById("newest").style.display = "none";
+            }
+            function showNewest() {
+                document.getElementById("newest_click").classList.add("dashboard_options_active_two");
+                document.getElementById("trending_click").classList.remove("dashboard_options_active_two");
+                document.getElementById("my_leagues_click").classList.remove("dashboard_options_active_two");
+                document.getElementById("newest").style.display = "block";
+                document.getElementById("trending").style.display = "none";
+                document.getElementById("my_leagues").style.display = "none";
+            }
+            /* Show Contest Live Section  */
+            function showContestSectionClick(idsec) {
+                var elems = document.getElementsByClassName("contest_live_link");
+                [].forEach.call(elems, function(el) {
+                    el.classList.remove("contest_live_link");
+                });
+                document.getElementById(idsec).classList.add("contest_live_link");
+                
+                var elems2 = document.getElementsByClassName("displayyes");
+                [].forEach.call(elems2, function(el) {
+                    el.classList.remove("displayyes");
+                    el.classList.add("displayno");
+                });
+
+                var bodyid = idsec+'body';
+                document.getElementById("contest_main_section").classList.add("displayno");
+                document.getElementById("contest_main_section").style.display = "none";
+                document.getElementById(bodyid).classList.add("displayyes");
+            }
+
+            function showContestSectionAll() {
+                var elems = document.getElementsByClassName("contest_live_link");
+                [].forEach.call(elems, function(el) {
+                    el.classList.remove("contest_live_link");
+                });
+                document.getElementById("contest_live_val_all").classList.add("contest_live_link");
+
+                var elems2 = document.getElementsByClassName("displayyes");
+                [].forEach.call(elems2, function(el) {
+                    el.classList.remove("displayyes");
+                    el.classList.add("displayno");
+                })
+                document.getElementById("contest_main_section").style.display = "block";
+            }
+            /* Show Contest Live Section Ends */
+            /* Show Rules and Scoring Onclick */
+            function showRules() {
+                document.getElementById("rules_scoring_btn").classList.add("contest_details_active");
+                document.getElementById("contest_details_btn").classList.remove("contest_details_active");
+                document.getElementById("rules_scoring_section").style.display = "block";
+                document.getElementById("contest_detail_section").style.display = "none";    
+            };
+            /* Show Rules and Scoring Onclick Ends */
+
+            /* Show Contest Details Onclick */
+            function showContest() {
+                document.getElementById("contest_details_btn").classList.add("contest_details_active");
+                document.getElementById("rules_scoring_btn").classList.remove("contest_details_active");
+                document.getElementById("rules_scoring_section").style.display = "none";
+                document.getElementById("contest_detail_section").style.display = "block";
+            };
+
+            function showall(gameid) {
+                var colgk = document.getElementsByClassName('GK');
+                    for(i = 0; i < colgk.length; i++) {
+                        colgk[i].style.display = 'revert';
+                    }
+                var colgk2 = document.getElementsByClassName('showgk');
+                    for(i = 0; i < colgk2.length; i++) {
+                        colgk2[i].style.padding = "0px";
+                        colgk2[i].style.backgroundColor = 'transparent';
+                        colgk2[i].style.borderRadius = "0px";
+                    }
+                var colm = document.getElementsByClassName('M');
+                    for(i = 0; i < colm.length; i++) {
+                        colm[i].style.display = 'revert';
+                    }
+                var colm2 = document.getElementsByClassName('showmf');
+                    for(i = 0; i < colm2.length; i++) {
+                        colm2[i].style.padding = "0px";
+                        colm2[i].style.backgroundColor = 'transparent';
+                        colm2[i].style.borderRadius = "0px";
+                    }
+                var cold = document.getElementsByClassName('D');
+                    for(i = 0; i < cold.length; i++) {
+                        cold[i].style.display = 'revert';
+                    }
+                var cold2 = document.getElementsByClassName('showdf');
+                    for(i = 0; i < cold2.length; i++) {
+                        cold2[i].style.padding = "0px";
+                        cold2[i].style.backgroundColor = 'transparent';
+                        cold2[i].style.borderRadius = "0px";
+                    }
+                var colf = document.getElementsByClassName('F');
+                    for(i = 0; i < colf.length; i++) {
+                        colf[i].style.display = 'revert';
+                    }
+                var colf2 = document.getElementsByClassName('showfw');
+                    for(i = 0; i < colf2.length; i++) {
+                        colf2[i].style.padding = "0px";
+                        colf2[i].style.backgroundColor = 'transparent';
+                        colf2[i].style.borderRadius = "0px";
+                    }
+                    
+                var cola = document.getElementsByClassName('A');
+                    for(i = 0; i < cola.length; i++) {
+                        cola[i].style.display = 'revert';
+                    }
+                var cola2 = document.getElementsByClassName('showall');
+                    for(i = 0; i < cola2.length; i++) {
+                        cola2[i].style.padding = "5px";
+                        cola2[i].style.backgroundColor = 'white';
+                        cola2[i].style.borderRadius = "5px";
+                    }
+
+                     //Begin
+                     var rows = document.getElementById("gameplayers").rows;
+                    var rowsno = rows.length;
+                    for(i = 0; i < rowsno; i++) {
+                        rows[i].style.display = "";
+                    }
+                     var rows = document.getElementById("gameplayers2").rows;
+                    var rowsno = rows.length;
+                    for(i = 0; i < rowsno; i++) {
+                        rows[i].style.display = "";
+                    }
+            }
+
+            function showfw(gameid) {
+                var colgk = document.getElementsByClassName('GK');
+                    for(i = 0; i < colgk.length; i++) {
+                        colgk[i].style.display = 'none';
+                    }
+                var colgk2 = document.getElementsByClassName('showgk');
+                    for(i = 0; i < colgk2.length; i++) {
+                        colgk2[i].style.padding = "0px";
+                        colgk2[i].style.backgroundColor = 'transparent';
+                        colgk2[i].style.borderRadius = "0px";
+                    }
+                var colm = document.getElementsByClassName('M');
+                    for(i = 0; i < colm.length; i++) {
+                        colm[i].style.display = 'none';
+                    }
+                var colm2 = document.getElementsByClassName('showmf');
+                    for(i = 0; i < colm2.length; i++) {
+                        colm2[i].style.padding = "0px";
+                        colm2[i].style.backgroundColor = 'transparent';
+                        colm2[i].style.borderRadius = "0px";
+                    }
+                var cold = document.getElementsByClassName('D');
+                    for(i = 0; i < cold.length; i++) {
+                        cold[i].style.display = 'none';
+                    }
+                var cold2 = document.getElementsByClassName('showdf');
+                    for(i = 0; i < cold2.length; i++) {
+                        cold2[i].style.padding = "0px";
+                        cold2[i].style.backgroundColor = 'transparent';
+                        cold2[i].style.borderRadius = "0px";
+                    }
+                var colf = document.getElementsByClassName('A');
+                    for(i = 0; i < colf.length; i++) {
+                        colf[i].style.display = 'revert';
+                    }
+                var colf2 = document.getElementsByClassName('showfw');
+                    for(i = 0; i < colf2.length; i++) {
+                        colf2[i].style.padding = "5px";
+                        colf2[i].style.backgroundColor = '#fff';
+                        colf2[i].style.borderRadius = "5px";
+                    }
+                    
+                var cola = document.getElementsByClassName('F');
+                    for(i = 0; i < cola.length; i++) {
+                        cola[i].style.display = 'none';
+                    }
+                var cola2 = document.getElementsByClassName('showall');
+                    for(i = 0; i < cola2.length; i++) {
+                        cola2[i].style.padding = "0px";
+                        cola2[i].style.backgroundColor = 'transparent';
+                        cola2[i].style.borderRadius = "0px";
+                    }
+
+                    //Begin
+                    var rows = document.getElementById("gameplayers").rows;
+                    var rowsno = rows.length;
+                    for(i = 0; i < rowsno; i++) {
+                        if(rows[i].classList.contains("Attacker") || rows[i].classList.contains("headers") ){
+                            rows[i].style.display = "";
+                        }else{
+                            rows[i].style.display = "none";
+                        }
+                    }
+                    var rows = document.getElementById("gameplayers2").rows;
+                    var rowsno = rows.length;
+                    for(i = 0; i < rowsno; i++) {
+                        if(rows[i].classList.contains("Attacker") || rows[i].classList.contains("headers") ){
+                            rows[i].style.display = "";
+                        }else{
+                            rows[i].style.display = "none";
+                        }
+                    }
+            }
+
+            function showgk(gameid) {
+                var colgk = document.getElementsByClassName('GK');
+                    for(i = 0; i < colgk.length; i++) {
+                        colgk[i].style.display = 'revert';
+                    }
+                var colgk2 = document.getElementsByClassName('showgk');
+                    for(i = 0; i < colgk2.length; i++) {
+                        colgk2[i].style.padding = "5px";
+                        colgk2[i].style.backgroundColor = 'white';
+                        colgk2[i].style.borderRadius = "5px";
+                    }
+                var colm = document.getElementsByClassName('M');
+                    for(i = 0; i < colm.length; i++) {
+                        colm[i].style.display = 'none';
+                    }
+                var colm2 = document.getElementsByClassName('showmf');
+                    for(i = 0; i < colm2.length; i++) {
+                        colm2[i].style.padding = "0px";
+                        colm2[i].style.backgroundColor = 'transparent';
+                        colm2[i].style.borderRadius = "0px";
+                    }
+                var cold = document.getElementsByClassName('D');
+                    for(i = 0; i < cold.length; i++) {
+                        cold[i].style.display = 'none';
+                    }
+                var cold2 = document.getElementsByClassName('showdf');
+                    for(i = 0; i < cold2.length; i++) {
+                        cold2[i].style.padding = "0px";
+                        cold2[i].style.backgroundColor = 'transparent';
+                        cold2[i].style.borderRadius = "0px";
+                    }
+                var colf = document.getElementsByClassName('F');
+                    for(i = 0; i < colf.length; i++) {
+                        colf[i].style.display = 'none';
+                    }
+                var colf2 = document.getElementsByClassName('showfw');
+                    for(i = 0; i < colf2.length; i++) {
+                        colf2[i].style.padding = "0px";
+                        colf2[i].style.backgroundColor = 'transparent';
+                        colf2[i].style.borderRadius = "0px";
+                    }
+                    
+                var cola = document.getElementsByClassName('A');
+                    for(i = 0; i < cola.length; i++) {
+                        cola[i].style.display = 'none';
+                    }
+                var cola2 = document.getElementsByClassName('showall');
+                    for(i = 0; i < cola2.length; i++) {
+                        cola2[i].style.padding = "0px";
+                        cola2[i].style.backgroundColor = 'transparent';
+                        cola2[i].style.borderRadius = "0px";
+                    }
+
+                    //Begin
+                    var rows = document.getElementById("gameplayers").rows;
+                    var rowsno = rows.length;
+                    for(i = 0; i < rowsno; i++) {
+                        if(rows[i].classList.contains("Goalkeeper") || rows[i].classList.contains("headers") ){
+                            rows[i].style.display = "";
+                        }else{
+                            rows[i].style.display = "none";
+                        }
+                    }
+                    var rows = document.getElementById("gameplayers2").rows;
+                    var rowsno = rows.length;
+                    for(i = 0; i < rowsno; i++) {
+                        if(rows[i].classList.contains("Goalkeeper") || rows[i].classList.contains("headers") ){
+                            rows[i].style.display = "";
+                        }else{
+                            rows[i].style.display = "none";
+                        }
+                    }
+            }
+
+            function showdf(gameid) {
+                var colgk = document.getElementsByClassName('GK');
+                    for(i = 0; i < colgk.length; i++) {
+                        colgk[i].style.display = 'none';
+                    }
+                var colgk2 = document.getElementsByClassName('showgk');
+                    for(i = 0; i < colgk2.length; i++) {
+                        colgk2[i].style.padding = "0px";
+                        colgk2[i].style.backgroundColor = 'transparent';
+                        colgk2[i].style.borderRadius = "0px";
+                    }
+                var colm = document.getElementsByClassName('M');
+                    for(i = 0; i < colm.length; i++) {
+                        colm[i].style.display = 'none';
+                    }
+                var colm2 = document.getElementsByClassName('showmf');
+                    for(i = 0; i < colm2.length; i++) {
+                        colm2[i].style.padding = "0px";
+                        colm2[i].style.backgroundColor = 'transparent';
+                        colm2[i].style.borderRadius = "0px";
+                    }
+                var cold = document.getElementsByClassName('D');
+                    for(i = 0; i < cold.length; i++) {
+                        cold[i].style.display = 'revert';
+                    }
+                var cold2 = document.getElementsByClassName('showdf');
+                    for(i = 0; i < cold2.length; i++) {
+                        cold2[i].style.padding = "5px";
+                        cold2[i].style.backgroundColor = 'white';
+                        cold2[i].style.borderRadius = "5px";
+                    }
+                var colf = document.getElementsByClassName('F');
+                    for(i = 0; i < colf.length; i++) {
+                        colf[i].style.display = 'none';
+                    }
+                var colf2 = document.getElementsByClassName('showfw');
+                    for(i = 0; i < colf2.length; i++) {
+                        colf2[i].style.padding = "0px";
+                        colf2[i].style.backgroundColor = 'transparent';
+                        colf2[i].style.borderRadius = "0px";
+                    }
+                    
+                var cola = document.getElementsByClassName('A');
+                    for(i = 0; i < cola.length; i++) {
+                        cola[i].style.display = 'none';
+                    }
+                var cola2 = document.getElementsByClassName('showall');
+                    for(i = 0; i < cola2.length; i++) {
+                        cola2[i].style.padding = "0px";
+                        cola2[i].style.backgroundColor = 'transparent';
+                        cola2[i].style.borderRadius = "0px";
+                    }
+                    
+                    //Begin
+                    var rows = document.getElementById("gameplayers").rows;
+                    var rowsno = rows.length;
+                    for(i = 0; i < rowsno; i++) {
+                        if(rows[i].classList.contains("Defender") || rows[i].classList.contains("headers") ){
+                            rows[i].style.display = "";
+                        }else{
+                            rows[i].style.display = "none";
+                        }
+                    }
+                    var rows = document.getElementById("gameplayers2").rows;
+                    var rowsno = rows.length;
+                    for(i = 0; i < rowsno; i++) {
+                        if(rows[i].classList.contains("Defender") || rows[i].classList.contains("headers") ){
+                            rows[i].style.display = "";
+                        }else{
+                            rows[i].style.display = "none";
+                        }
+                    }
+            }
+
+            function showmf(gameid) {
+                var colgk = document.getElementsByClassName('GK');
+                    for(i = 0; i < colgk.length; i++) {
+                        colgk[i].style.display = 'none';
+                    }
+                var colgk2 = document.getElementsByClassName('showgk');
+                    for(i = 0; i < colgk2.length; i++) {
+                        colgk2[i].style.padding = "0px";
+                        colgk2[i].style.backgroundColor = 'transparent';
+                        colgk2[i].style.borderRadius = "0px";
+                    }
+                var colm = document.getElementsByClassName('M');
+                    for(i = 0; i < colm.length; i++) {
+                        colm[i].style.display = 'revert';
+                    }
+                var colm2 = document.getElementsByClassName('showmf');
+                    for(i = 0; i < colm2.length; i++) {
+                        colm2[i].style.padding = "5px";
+                        colm2[i].style.backgroundColor = 'white';
+                        colm2[i].style.borderRadius = "5px";
+                    }
+                var cold = document.getElementsByClassName('D');
+                    for(i = 0; i < cold.length; i++) {
+                        cold[i].style.display = 'none';
+                    }
+                var cold2 = document.getElementsByClassName('showdf');
+                    for(i = 0; i < cold2.length; i++) {
+                        cold2[i].style.padding = "0px";
+                        cold2[i].style.backgroundColor = 'transparent';
+                        cold2[i].style.borderRadius = "0px";
+                    }
+                var colf = document.getElementsByClassName('F');
+                    for(i = 0; i < colf.length; i++) {
+                        colf[i].style.display = 'none';
+                    }
+                var colf2 = document.getElementsByClassName('showfw');
+                    for(i = 0; i < colf2.length; i++) {
+                        colf2[i].style.padding = "0px";
+                        colf2[i].style.backgroundColor = 'transparent';
+                        colf2[i].style.borderRadius = "0px";
+                    }
+                    
+                var cola = document.getElementsByClassName('A');
+                    for(i = 0; i < cola.length; i++) {
+                        cola[i].style.display = 'none';
+                    }
+                var cola2 = document.getElementsByClassName('showall');
+                    for(i = 0; i < cola2.length; i++) {
+                        cola2[i].style.padding = "0px";
+                        cola2[i].style.backgroundColor = 'transparent';
+                        cola2[i].style.borderRadius = "0px";
+                    }
+
+                    //Begin
+                    var rows = document.getElementById("gameplayers").rows;
+                    var rowsno = rows.length;
+                    for(i = 0; i < rowsno; i++) {
+                        if(rows[i].classList.contains("Midfielder") || rows[i].classList.contains("headers") ){
+                            rows[i].style.display = "";
+                        }else{
+                            rows[i].style.display = "none";
+                        }
+                    }
+                    var elements = document.getElementsByClassName("gameplayers2");
+                    for(var i = 0; i < elements.length; i++) {
+                        var rows = elements[i].rows;
+                        var rowsno = rows.length;
+                    for(i = 0; i < rowsno; i++) {
+                        if(rows[i].classList.contains("Midfielder") || rows[i].classList.contains("headers") ){
+                        //console.log(rows[i]);
+                            rows[i].style.display = "";
+                        }else{
+                            rows[i].style.display = "none";
+                        }
+                    }
+                    }
+
+                   /* var rows = document.getElementById("gameplayers2").rows;
+                    var rowsno = rows.length;
+                    for(i = 0; i < rowsno; i++) {
+                        if(rows[i].classList.contains("Midfielder") || rows[i].classList.contains("headers") ){
+                            rows[i].style.display = "";
+                        }else{
+                            rows[i].style.display = "none";
+                        }
+                    }*/
+                    
+            }
+
+            //Validate Formation Choice
+            function validateformation(newpost, action){
+                var formation = document.getElementById("formation").value;
+                var squadform = document.getElementById("squadform").value;
+                //alert(gameboost);
+                var df = 0;
+                var mf = 0;
+                var fw = 0;
+                var gk = 1
+                if(formation == '4:4:2'){
+                    df = 4; 
+                    mf = 4;
+                    fw = 2;
+                }else if(formation == '4:3:3'){
+                    df = 4; 
+                    mf = 3;
+                    fw = 3;
+                }else if(formation == '5:4:1'){
+                    df = 5; 
+                    mf = 4;
+                    fw = 1;
+                }
+               // alert(formation);alert(squadform);
+                var breaksquad = squadform.split(':');
+                if(action == 'add'){
+                    var sdf = (newpost == 'DF') ? (parseInt(breaksquad[0]) + 1) : parseInt(breaksquad[0]);
+                    var smf = (newpost == 'MF') ? (parseInt(breaksquad[1]) + 1) : parseInt(breaksquad[1]);
+                    var sfw = (newpost == 'FW') ? (parseInt(breaksquad[2]) + 1) : parseInt(breaksquad[2]);
+                    var sgk = (newpost == 'GK') ? (parseInt(breaksquad[3]) + 1) : parseInt(breaksquad[3]);
+                }else{
+                    var sdf = (newpost == 'DF') ? (parseInt(breaksquad[0]) - 1) : parseInt(breaksquad[0]);
+                    var smf = (newpost == 'MF') ? (parseInt(breaksquad[1]) - 1) : parseInt(breaksquad[1]);
+                    var sfw = (newpost == 'FW') ? (parseInt(breaksquad[2]) - 1) : parseInt(breaksquad[2]);
+                    var sgk = (newpost == 'GK') ? (parseInt(breaksquad[3]) - 1) : parseInt(breaksquad[3]);
+                }
+
+                if(df >= sdf && mf >= smf && fw >= sfw && gk >= sgk){
+                    document.getElementById("squadform").value = sdf + ':' + smf + ':' + sfw + ':' + sgk;
+                    return true;
+                }else{
+                   // document.getElementById("squadform").value = sdf + ':' + smf + ':' + sfw + ':' + sgk;
+                    return false;
+                }
+            }
+
+            //Add player to squad
+            function addplayer(playerid, post){
+                var timer = document.getElementById('timer_id').innerHTML;
+                //alert(timer);
+                if(timer == "COMPLETED"){
+                    document.getElementById("notmsg").innerHTML = "Entry time has passed for this contest!";
+                    var modal = document.getElementById("myModal");
+                    modal.style.display = "flex";
+                    exit;
+                }
+
+                var postt = post;
+                var checkout = validateformation(postt, 'add');
+                if(checkout){
+                    var classsquad = 'squad'+playerid;
+                    var classready = 'ready'+playerid;
+                    var ready = document.getElementsByClassName(classready);
+                        for(i = 0; i < ready.length; i++) {
+                            ready[i].style.display = 'none';
+                        }
+                    var squad = document.getElementsByClassName(classsquad);
+                        for(i = 0; i < squad.length; i++) {
+                            squad[i].style.display = 'revert';
+                        }
+                    var oldteam = document.getElementById("squadteam").value;
+                    var newteam = playerid +'|'+oldteam
+
+                    document.getElementById("squadteam").value = newteam;
+                }else{
+                    if(gameboost == 1 && gameboostadd < 3){
+                        var classsquad = 'squad'+playerid;
+                    var classready = 'ready'+playerid;
+                    var ready = document.getElementsByClassName(classready);
+                        for(i = 0; i < ready.length; i++) {
+                            ready[i].style.display = 'none';
+                        }
+                    var squad = document.getElementsByClassName(classsquad);
+                        for(i = 0; i < squad.length; i++) {
+                            squad[i].style.display = 'revert';
+                        }
+                    var oldteam = document.getElementById("squadteam").value;
+                    var newteam = playerid +'|'+oldteam
+
+                    document.getElementById("squadteam").value = newteam;
+
+                    gameboostadd++;
+                    }else{
+                        document.getElementById("notmsg").innerHTML = "There’s an issue with your team selection. Kindly review and try again";
+                        var modal = document.getElementById("myModal");
+                        modal.style.display = "flex";
+                    }
+                }
+            }
+
+            //Close Notification
+            function notclose(){
+                var modal = document.getElementById("myModal");
+                modal.style.display = "none";
+            }
+
+            //Remove player from squad
+            function removeplayer(playerid, post){
+                var postt = post;
+                var checkout = validateformation(postt, 'remove');
+
+                if(gamecaptain == 'select'+playerid){
+                    gamecaptain = '';
+                }
+
+                if(checkout){
+                    var classsquad = 'squad'+playerid;
+                    var classready = 'ready'+playerid;
+                    var ready = document.getElementsByClassName(classready);
+                        for(i = 0; i < ready.length; i++) {
+                            ready[i].style.display = 'revert';
+                        }
+                    var squad = document.getElementsByClassName(classsquad);
+                        for(i = 0; i < squad.length; i++) {
+                            squad[i].style.display = 'none';
+                        }
+                    var oldteam = document.getElementById("squadteam").value;
+                    var remove = playerid+'|';
+                    var newteam = oldteam.replace(remove, "");
+                    document.getElementById("squadteam").value = newteam;
+                }else{
+                   // alert('Cant Remove This Player, Check The Player Position Count With Your Selected Formation');
+                    document.getElementById("notmsg").innerHTML = "There’s an issue with your team selection. Kindly review and try again";
+                    var modal = document.getElementById("myModal");
+                    modal.style.display = "flex";
+                }
+            }
+
+            //Mark Captain
+            function markcaptain(playerid, post){
+                if(gamecaptain != ''){
+                document.getElementById(gamecaptain).className = 'fas fa-stop'
+            }
+                gamecaptain = 'select'+playerid;
+                mycaptain = playerid;
+                document.getElementById(gamecaptain).className  = 'fas fa-check';
+            }
+
+            //ApplyBoost
+
+            function applyboost(playerid, post){
+                gameboost = 1;
+                var element = document.getElementById("booststatus");
+                var text = element.innerText || element.textContent;
+                if(text == "Disabled"){
+                    exit;
+                }
+                var modal = document.getElementById("boostshow").style.removeProperty('display');
+                document.getElementById('boostapply').innerHTML = '<a style="color:#fff" href="#" onclick="removeboost()">REMOVE BOOST</a>';
+            }
+
+            function removeboost(playerid, post){
+                gameboost = 0;
+                //alert(gameboost);
+                var modal = document.getElementById("boostshow").style.display = "none";
+                document.getElementById('boostapply').innerHTML = '<a style="color:#fff" href="#" onclick="applyboost()">APPLY BOOST</a>';
+            }
+
+            //Reset Squad
+            function resetsquad(){
+                var squad = document.getElementsByClassName('squadplayer');
+                    for(i = 0; i < squad.length; i++) {
+                        squad[i].style.display = 'none';
+                        }
+                var ready = document.getElementsByClassName('readyplayer');
+                    for(i = 0; i < ready.length; i++) {
+                        ready[i].style.display = 'revert';
+                    }
+                    document.getElementById("squadteam").value = "";
+                    document.getElementById("squadform").value = "0:0:0:0";
+            }
+
+            //Enter Contest
+            function entercontest(){
+                //alert(gameboost); 
+                var squadteam = document.getElementById("squadteam").value;
+                var squadform = document.getElementById("squadform").value;
+                var formation = document.getElementById("formation").value;
+                var contestid = document.getElementById("contestid").value;
+                var contester = document.getElementById("contester").value;
+                var entry_fee = document.getElementById("entry_fee").value;
+                var max_entry = document.getElementById("max_entry").value;
+                var multi_entry = document.getElementById("multi_entry").value;
+                var entry_count = document.getElementById("entry_count").value;
+                document.getElementById("myboost").value = gameboost;
+                document.getElementById("mycaptain").value = mycaptain;
+                var newformation = formation + ':1';
+
+                //check if it not multi-entry and user want to enter again
+                if(multi_entry == 0){
+                    $.ajax({
+                        type:'GET',
+                        url:'/contest/getcontestentrycount/'+contestid,
+                        data:'_token = y97TPLcyPglBZcTjbRN7gqz3LutQ47aNX7unxevi',
+                        success:function(data) {
+                            if(data >= 1){
+                    document.getElementById("notmsg").innerHTML = "You have already entered into this contest";
+                    var modal = document.getElementById("myModal");
+                    modal.style.display = "flex";
+                    exit;
+                }
+
+                            }
+                        });
+                }
+
+                //check for max entry reached
+                if(max_entry == entry_count){
+                    document.getElementById("notmsg").innerHTML = "Maximum number of entries has been reached";
+                    var modal = document.getElementById("myModal");
+                    modal.style.display = "flex";
+                    exit;
+                }
+
+                if(squadform == newformation && gamecaptain != ''){//formation is cool
+                    //alert("Player Selection Completed!")
+                    document.getElementById("notmsg").innerHTML = "Your team selection has been completed successfully. Please enter a contest to continue";
+                    var modal = document.getElementById("myModal");
+                    modal.style.display = "flex";
+                    document.getElementById("contest_entry").submit(); 
+                }else{//error in formation or not completed 
+                   // alert("Player Selection Not Completed!");
+                   document.getElementById("notmsg").innerHTML = "There’s an issue with your team selection. Kindly review and try again";
+                    var modal = document.getElementById("myModal");
+                    modal.style.display = "flex";
+                }
+            }
+            
+            //Get Contest Widget
+            function showentries(id){
+                $.ajax({
+               type:'GET',
+               url:'/contest/getcontestpending/'+id,
+               data:'_token = y97TPLcyPglBZcTjbRN7gqz3LutQ47aNX7unxevi',
+               success:function(data) {
+                var contesttitle = data.title;
+                var contestpercent = (parseInt(data.entrycount)/parseInt(data.totalentries)).toFixed(1) * 100;
+                var entrydetails = Object.entries(data.entrydetails);
+                //console.log(entrydetails);
+                var contestbody = '';
+
+                [].forEach.call(entrydetails, function(ent) {
+                    var main = Object.entries(ent);
+                    var my = Object.values(main[1]);
+                    var myval = Object.values(my[1]);
+                    var mykey = Object.keys(my[1]);
+                    contestbody += '<tr class="contest_main_tr">'
+                    +'<td class="gk_side_two">'+myval[0]+'</td>'
+                    +'<td class="other_data two">'+myval[1]+'</td>'
+                    +'<td class="standing">1</td>'
+                    +'</tr>';
+                });
+
+                var contestsumm = '<span><strong> '+data.entrycount+'</strong> of '+data.totalentries+'</span><div class="progress progress_schedule upcoming_innerProgress">'
+                     +'<div class="progress__bar progress__bar-width-25" role="progressbar" aria-valuenow="75" aria-valuemin="10" aria-valuemax="100" style="width:'+contestpercent+'%"></div>'
+                     +'</div>'+contestpercent+'% FULL</div>';
+                
+                document.getElementById('contesttitle').innerHTML = contesttitle;
+                document.getElementById('contestsummary').innerHTML = contestsumm;
+                document.getElementById('contestbody').innerHTML = contestbody;
+               }
+            });
+            }
+
+            //Get Line Ups
+            function showlineup(eid){
+                $.ajax({
+                    type:'GET',
+                    url:'/contest/getentrylineup/'+eid,
+                    data:'_token = y97TPLcyPglBZcTjbRN7gqz3LutQ47aNX7unxevi',
+                    beforeSend: function() {
+                            $('#loader').show();
+                    },
+                    success:function(datas) {
+                        console.log(datas);
+                        var data = JSON.parse(datas);
+                        console.log(data);
+                        //alert('ksksk');
+                        var posgk = data.position4;
+                        var posat = data.position3;
+                        var posmf = data.position2;
+                        var posdf = data.position1;
+                        var gkamt = data.amount4;
+                        var atamt = data.amount3;
+                        var mfamt = data.amount2;
+                        var dfamt = data.amount1;
+                        var name = data.name;
+                        var title = data.title;
+                        var formation = data.formation;
+                        console.log(data.goalkeeper);
+                        console.log(data.goalkeeperpoints);
+                        console.log(data.defenders);
+                        console.log(data.defenderspoints);
+                        console.log(data.midfielders);
+                        console.log(data.midfielderspoints);
+                        console.log(data.attackers);
+                        console.log(data.attackerspoints);
+                        var gk = makeupformation(gkamt, posgk, data.goalkeeper, data.goalkeeperpoints);
+                        var df = makeupformation(dfamt, posdf, data.defenders, data.defenderspoints);
+                        var mf = makeupformation(mfamt, posmf, data.midfielders, data.midfielderspoints);
+                        var at = makeupformation(atamt, posat, data.attackers, data.attackerspoints);
+
+                        var header = '<div class="col-lg-12" style="">'
+                            +'<div class="col-sm-4" style="float:left; text-align:center;"><strong>Contest</strong><br/>'+title+'</div>'
+                            +'<div class="col-sm-4" style="float:left; text-align:center;"><strong>User</strong><br/>'+name+'</div>'
+                            +'<div class="col-sm-4" style="float:left; text-align:center;"><strong>Formation</strong><br/>'+formation+'</div>'
+                            +'</div>';
+                        var lineuptitle = '<div class="col-lg-12" style="text-align:center">.</div><div class="col-lg-12" style="font-weight:bold; text-align:center">Entry Line Up Formation</div>';
+                        var lineupbody = '<div class="col-lg-12">'
+                            +header
+                            +lineuptitle
+                            +'<div class="col-lg-12" style="text-align:center">Goal Keeper</div>'+gk
+                            +'<div class="col-lg-12" style="text-align:center">Defenders</div>'+df
+                            +'<div class="col-lg-12" style="text-align:center">Midfielders</div>'+mf
+                            +'<div class="col-lg-12" style="text-align:center">Forwarder(s)</div>'+at
+                            +'</div>';
+                        document.getElementById('mediumBody').innerHTML = lineupbody;
+                    },
+                    complete: function() {
+                            $('#loader').hide();
+                    },
+                });
+            }
+
+            //makeup the formation line
+            function makeupformation(amt, pos, ply, pnts){
+                var form = '<div class="col-lg-12">';
+                var addcss = (amt == 5) ? 'max-width:20%;' : '';
+                for(let i = 0; i < amt; i++){
+                    form += '<div style="float:left; text-align:center;'+addcss+'" class="'+pos+'"><span style="font-size: 12px;font-weight: bold;color: #a5a5a5;border: solid #ffffff6e 3px;border-radius:5px; padding:3px;display: inline-block;margin:5px; min-width:70%; background:'+ply[i].color+'">'+ply[i].name+'<br/>('+ply[i].key+')<br/><span>Game Point:'+pnts[i]+'</span></span></div>';
+                }
+                form += '</div>';
+                return form;
+            }
+            
+            //Get Contest Results Widget
+            function showhistory(id){
+                $.ajax({
+               type:'GET',
+               url:'/contest/getcontesthistory/'+id,
+               data:'_token = y97TPLcyPglBZcTjbRN7gqz3LutQ47aNX7unxevi',
+               beforeSend: function() {
+                    $('#loader').show();
+                },
+               success:function(data) {
+                var contesttitle = data.title+' Results';
+                var contestpercent = (parseInt(data.entrycount)/parseInt(data.totalentries)).toFixed(1) * 100;
+                
+               // console.log(data.entrycount);
+                var entrydetails = Object.entries(data.entrydetails);
+                var winslash = data.type;
+                var completed = data.end;
+                console.log(entrydetails);
+                var contestbody = '';
+                var iconclass = [
+                    "fas fa-caret-down games_section_icons icon_red",
+                    "fas fa-stop-circle games_section_icons icon_black",
+                    "fas fa-caret-up games_section_icons icon_green",
+                ];
+
+                
+                [].forEach.call(entrydetails, function(ent) {
+                    var main = Object.entries(ent);
+                    var my = Object.values(main[1]);
+                    var myval = Object.values(my[1]);
+                    var mykey = Object.keys(my[1]);
+                    var position = myval[1];
+                    var cstatus = myval[2];
+                    var won = myval[3];
+                    var eid = myval[4];
+                    var points = myval[5];
+                    var line2 = '<td class="standing"><i class="'+iconclass[cstatus]+'"></i> <span class="games_section_text">'+position+'</span></td>';
+                    contestbody += '<tr class="contest_main_tr">'
+                    +'<td class="gk_side_twow" style="font-weight:bold">'+myval[0]+'</td>'
+                    +line2
+                    +'<td class="other_data"> '+points+'</td>'
+                    +'<td class="other_data">NGN '+won+'</td>'
+                    +'<td class="standing"><a href="#" onclick="showlineup('+eid+')" class="text-secondary" data-toggle="modal" id="mediumButton" data-target="#mediumModal" data-attr=""><strong>View</a></td>'
+                    +'</tr>';
+                });
+
+                var contestsumm = '<span><strong> Completed On:  '+completed+'</span><div class="progress progress_schedule upcoming_innerProgress">'
+                     +'<div class="progress__bar progress__bar-width-25" role="progressbar" aria-valuenow="75" aria-valuemin="10" aria-valuemax="100" style="width:'+contestpercent+'%"></div>'
+                     +'</div><div style="float:right"> '+contestpercent+'% Completed</div>Win-Slash - '+winslash+'</div>';
+                
+                document.getElementById('contesttitle').innerHTML = contesttitle;
+                document.getElementById('contestsummary').innerHTML = contestsumm;
+                document.getElementById('contestbody').innerHTML = contestbody;
+               },
+               complete: function() {
+                    $('#loader').hide();
+                },
+            });
+            }
+            //Get Contest Results Widget
+            function showlivehistory(id){
+                $.ajax({
+               type:'GET',
+               url:'/contest/getcontesthistory/'+id,
+               data:'_token = y97TPLcyPglBZcTjbRN7gqz3LutQ47aNX7unxevi',
+               beforeSend: function() {
+                    $('#loader').show();
+                },
+               success:function(data) {
+                var contesttitle = data.title+' Results';
+                var contestpercent = (parseInt(data.entrycount)/parseInt(data.totalentries)).toFixed(1) *100;
+                var entrydetails = Object.entries(data.entrydetails);
+                var winslash = data.type;
+                var completed = data.end;
+                //console.log(entrydetails);
+                var contestbody = '';
+                var iconclass = [
+                    "fas fa-caret-down games_section_icons icon_red",
+                    "fas fa-stop-circle games_section_icons icon_black",
+                    "fas fa-caret-up games_section_icons icon_green",
+                ];
+
+                [].forEach.call(entrydetails, function(ent) {
+                    var main = Object.entries(ent);
+                    var my = Object.values(main[1]);
+                    var myval = Object.values(my[1]);
+                    var mykey = Object.keys(my[1]);
+                    var position = myval[1];
+                    var cstatus = myval[2];
+                    var won = myval[3];
+                    var eid = myval[4];
+                    var line2 = '<td class="standing"><i class="'+iconclass[cstatus]+'"></i> <span class="games_section_text">'+position+'</span></td>';
+                    contestbody += '<tr class="contest_main_tr">'
+                    +'<td class="gk_side_twow" style="font-weight:bold">'+myval[0]+'</td>'
+                    +line2
+                    +'<td class="other_data">NGN '+won+'</td>'
+                    +'<td class="standing"><a href="#" onclick="showlineup('+eid+')" class="text-secondary" data-toggle="modal" id="mediumButton" data-target="#mediumModal" data-attr=""><strong>View</a></td>'
+                    +'</tr>';
+                });
+
+                var contestsumm = '<span><strong> Completed On:  '+completed+'</span><div class="progress progress_schedule upcoming_innerProgress">'
+                     +'<div class="progress__bar progress__bar-width-25" role="progressbar" aria-valuenow="75" aria-valuemin="10" aria-valuemax="100" style="width:'+contestpercent+'%"> </div>'
+                     +'</div><div style="float:right"> '+contestpercent+'% Completed</div>Win-Slash - '+winslash+'</div>';
+                
+                document.getElementById('contesttitle').innerHTML = contesttitle;
+                document.getElementById('contestsummary').innerHTML = contestsumm;
+                document.getElementById('contestbody').innerHTML = contestbody;
+                document.getElementById('liveid').value = id;
+               },
+               complete: function() {
+                    $('#loader').hide();
+                },
+            });
+            }
+            
+        </script>
+    </head>
+    <body data-template="template-soccer" style="display: grid">
+        <div class="site-wrapper clearfix">
+            <div class="site-overlay"></div>
+           
+
+            <!-- Page Heading -->
+                        <!-- Header
+		    ================================================== -->
+		
+
+
+            <!--------New Header------------->
+
+            <div class="header-mobile clearfix" id="header-mobile">
+                <div class="header-mobile__logo">
+                    <a href=""><img src="/storage/logo.png" srcset="/storage/logo@2x.png" alt="CorrectFan" class="header-logo__img"></a>
+                </div>
+                <div class="header-mobile__inner">
+                    <a id="header-mobile__toggle" class="burger-menu-icon"><span class="burger-menu-icon__line"></span></a>
+                    <span class="header-mobile__search-icon" id="header-mobile__search-icon"></span>
+                </div>
+            </div>
+            
+            <!-- Header Desktop -->
+            <header class="header header--layout-1">
+            
+                <!-- Header Top Bar -->
+                <div class="header__top-bar clearfix">
+                    <div class="container">
+                        <div class="header__top-bar-inner">
+                            <!-- Account Navigation -->
+                           
+                            <ul class="nav-account">
+                                <li class="nav-account__item myProfile"><a href="https://www.correctfan.com/user/profile"><i id="profile_Icon" class="fa fa-user"></i>  Kabiru Olamide</a> </li>
+                                <li class="nav-account__item"><a href="https://www.correctfan.com/notifications" data-toggle="modall" data-target="#modal-login-register-tabs">Notification(s)</a></li>
+                                <li class="nav-account__item"><a href="https://www.correctfan.com/payment/transactions" data-toggle="modall" data-target="#modal-login-register-tabs">Transaction(s)</a></li>
+                                <li class="nav-account__item nav-account__item--wishlist">
+                                    <form method="POST" action="https://www.correctfan.com/logout">
+                                    <input type="hidden" name="_token" value="y97TPLcyPglBZcTjbRN7gqz3LutQ47aNX7unxevi">                                    <a class="block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 transition logoutmain" href="https://www.correctfan.com/logout" style="" onclick="event.preventDefault();
+                                                    this.closest('form').submit();">Log Out</a>
+                                </form>
+                            </li>
+                            </ul>
+                            <!-- Account Navigation / End -->
+                        </div>
+                    </div>
+                </div>
+                <!-- Header Top Bar / End -->
+            
+                <!-- Header Secondary -->
+                <div class="header__secondary">
+                    <div class="container">
+                        <!-- Header Search Form -->
+                        <div class="header-search-form">
+                            <form action="#" id="mobile-search-form" class="search-form">
+                                <input type="text" class="form-control header-mobile__search-control mmmm" value="" placeholder="Enter your search here...">
+                                <button type="submit" class="header-mobile__search-submit"><i class="fas fa-search"></i></button>
+                            </form>
+                        </div>
+                        <!-- Header Search Form / End -->
+                        <ul class="info-block info-block--header">
+                           <!-- <li class="info-block__item info-block__item--contact-primary">
+                               
+                                <h6 class="info-block__heading">POINTS</h6>
+                                <h6 class="info-block__heading hundred">100</h6>
+                            </li>-->
+                            <li class="info-block__item info-block__item--contact-secondary">
+                                <h6 class="info-block__heading">BOOSTS</h6>
+                                <h6 class="info-block__heading hundred">30</h6>
+                                <!--<a class="info-block__link" href="mailto:info@alchemists.com">info@alchemists.com</a>-->
+                            </li>
+                            <li class="info-block__item info-block__item--contact-secondary">
+                                <h6 class="info-block__heading">Rewards</h6>
+                                <h6 class="info-block__heading">0</h6>
+                            </li>
+                            <li class="info-block__item info-block__item--contact-secondary">
+                                <h6 class="info-block__heading">Winnings</h6>
+                                <h6 class="info-block__heading">0</h6>
+                            </li>
+                            <li class="info-block__item info-block__item--contact-secondary">
+                                    <h6 class="info-block__heading">Balance</h6>
+                                    <h6 class="info-block__heading">5800</h6>
+                            </li>
+                            <li class="info-block__item info-block__item--contact-secondary">
+                                    <h6 class="info-block__heading">VAT Coin</h6>
+                                    <h6 class="info-block__heading">0</h6>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Header Secondary / End -->
+            
+                <!-- Header Primary -->
+                <div class="header__primary">
+                    <div class="container">
+                        <div class="header__primary-inner">
+            
+                            <!-- Header Logo -->
+                            <div class="header-logo">
+                                <a href=""><img src="/storage/logo.png" srcset="/storage/logo@2x.png" alt="CorrectFan" class="header-logo__img"></a>
+                            </div>
+                            <!-- Header Logo / End -->
+            
+                            <!-- Main Navigation -->
+                            <nav class="main-nav clearfix">
+                                <ul class="main-nav__list">
+                                    <li class=""><a href="https://www.correctfan.com/dashboard" :active="request()->routeIs('dashboard')">Home</a></li>
+                                    <li class="active"><a href="/contest/faqs">How To Play</a></li>
+                                    <li class=""><a href="/contest/games">Game Center</a></li>
+                                    <li class=""><a href="/contest/vasgames">VAS Games</a></li>
+                                    <li class=""><a href="/contest/livegames">Live Scores</a></li>
+                                    <li class=""><a href="/contest/players">Stats</a></li>
+                                    <li class=""><a href="/contest/generalentry/1">Contests Status</a></li>
+                                    <li class=""><a href="/contest/news">Picks & Tips</a></li>
+                                    <li class=""><a href="/contest/livenews">News</a></li>
+                                    <li class=""><a href="/tickets">Help Center</a></li>
+                                    <!--<li class=""><a href="_soccer_shop-grid.html">Help Center</a>
+                                        <ul class="main-nav__sub">
+                                            <li class=""><a href="/tickets">My Tickets</a></li>
+                                            <li class=""><a href="/tickets">My Tickets</a></li>
+                                        </ul>
+                                    </li>-->
+                                </ul>
+            
+                                <!-- Social Links -->
+                                <ul class="social-links social-links--inline social-links--main-nav">
+                                    
+                                    <li class="social-links__item" style="margin-right:10px ">
+                                        <!-- <input class="info-button2" type="button" name="" value="ADD FUNDS" size="40">-->
+                                         <a class=" info-button2 btn button" href="https://www.correctfan.com/payment/mypayment" size="40" style="width: 100px"><i class="fa fa-plus-circle fa-lg"> </i> DEPOSIT</a>
+                                     </li> 
+                                     <li class="social-links__item">
+                                        <!-- <input class="info-button2" type="button" name="" value="ADD FUNDS" size="40">-->
+                                         <a class=" info-button2 btn button" href="https://www.correctfan.com/payment/buyboost" size="40"  style="width: 100px"><i class="fa fa-signal fa-lg"> </i> BOOST</a>
+                                     </li>
+                                    
+                                </ul>
+                                
+    
+                                <!-- Social Links / End -->
+            
+                                <!-- Pushy Panel Toggle -->
+                                <!--<a href="#" class="pushy-panel__toggle">
+                                    <span class="pushy-panel__line"></span>
+                                </a>-->
+                                <!-- Pushy Panel Toggle / Eng -->
+                            </nav>
+                            <!-- Main Navigation / End -->
+                        </div>
+                    </div>
+                </div>
+                <!-- Header Primary / End -->
+            
+            </header>
+            
+            <!-- Page Content -->
+           
+                        <!-- Content
+		================================================== -->
+		<div class="site-content">
+			<div class="container">
+		
+				<div class="row justify-content-center">
+				
+					</div>
+					<div class="col-lg-10" style="  background: #2E2C2614;padding: 20px;color: black;">
+						<div>
+							<h3>How to Play</h3>
+		
+		<div>It's easy to get started. Just fund your account, choose a contest, pick your 11 players, and then kick back in your favorite chair as you watch your team score.
+		
+		<h5 style="padding-top: 30px;">Two Ways to Play Fantasy Across Your Favorite Leagues</h5>
+		
+		<p>Players are allocated fantasy points based on their performances in real life matches as outlined below;</p>
+		</div>
+
+		<div class="table-responsive">
+			<table class="table table-compact table-striped table-bordered player-listing-table"
+				style=" border:2px solid #f1f3f6">
+				<thead>
+					<tr>
+						<th>Daily Contests</th>
+						<th>Weekly Contests</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td style="width: 50%">Contests Spans just one day of the week and selected matches for that specific day</td>
+						<td>Contests Spans an entire week and selected matches for that week</td>
+					</tr>
+					<tr>
+						<td>Just Pick your formation and select your players for each position</td>
+						<td>Just Pick your formation and select your players for each position</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+		<h5 style="padding-top: 30px;">Scoring Guide</h5>
+<p>These are the ways you will score points and win contests;</p>
+<div class="table-responsive">
+	<table class="table table-compact table-striped table-bordered player-listing-table"
+		style=" border:2px solid #f1f3f6">
+		<thead>
+			<tr>
+				<th style="width: 95%">Actions</th>
+				<th style="width: 5%">Points</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>For playing in a game</td>
+				<td>1</td>
+			</tr>
+			<tr>
+				<td>For playing at least 60mins in a game (includes playing points mentionedabove)</td>
+				<td>2</td>
+			</tr>
+			<tr>
+				<td>For each goal scored</td>
+				<td>6</td>
+			</tr>
+			<tr>
+				<td>For each goal assist (When a pass orcross leads to a goal being scored, no defender touch must interfere with the pass)</td>
+				<td>3</td>
+			</tr>
+			<tr>
+				<td>For goalkeeper or defenders keepinga clean sheet (must play at least 60mins)</td>
+				<td>4</td>
+			</tr>
+			<tr>
+				<td>For your midfielders keeping a cleansheet (must play at least 60mins)</td>
+				<td>1</td>
+			</tr>
+			<tr>
+				<td>For every 3 saves</td>
+				<td>1</td>
+			</tr>
+			<tr>
+				<td>For every penalty save</td>
+				<td>5</td>
+			</tr>
+			<tr>
+				<td>For every goal conceded by your goalkeeper or defenders</td>
+				<td>-0.5</td>
+			</tr>
+			<tr>
+				<td>For every penalty conceded</td>
+				<td>-1</td>
+			</tr>
+			<tr>
+				<td>For every penalty miss</td>
+				<td>-2</td>
+			</tr>
+			<tr>
+				<td>For every yellow card</td>
+				<td>-1</td>
+			</tr>
+			<tr>
+				<td>For every red card (includes any yellow card points)</td>
+				<td>-3</td>
+			</tr>
+			<tr>
+				<td>For every own goal</td>
+				<td>-2</td>
+			</tr>
+			<tr>
+				<td>For every cross (where the ball is played to a team mate in the penaltyarea)</td>
+				<td>0.33</td>
+			</tr>
+			<tr>
+				<td>For every key pass (one that leads to a shot at goal)</td>
+				<td>0.33</td>
+			</tr>
+			<tr>
+				<td>For every big chance created (whereanalysts determine a player shouldscore)</td>
+				<td>1</td>
+			</tr>
+			<tr>
+				<td>For every big chance missed</td>
+				<td>1</td>
+			</tr>
+			<tr>
+				<td>For every clearance, blocks or interceptions</td>
+				<td>0.125</td>
+			</tr>
+			<tr>
+				<td>For every recovered ball</td>
+				<td>0.125</td>
+			</tr>
+			<tr>
+				<td>For every error leading to a goal</td>
+				<td>-1</td>
+			</tr>
+			<tr>
+				<td>For every Match Ban</td>
+				<td>-10</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+<h5 style="padding-top: 30px;">Picks & Tips</h5>
+<p>Consider these tips when you are making selections;</p>
+						<!-- FAQs -->
+						<div class="accordion accordion--space-between" id="accordionFaqs">
+		
+							<div class="card">
+								<div class="card__header" id="heading-0">
+									<h5 class="mb-0">
+										<button class="btn btn-link accordion__header-link " type="button" data-toggle="collapse" data-target="#collapse-0" aria-expanded="true" aria-controls="collapse-0">
+											Underdogs tend to Overperform
+											<span class="accordion__header-link-icon"></span>
+										</button>
+									</h5>
+								</div>
+								<div id="collapse-0" class="collapse show" aria-labelledby="heading-0" data-parent="#accordionFaqs">
+									<div class="card__content">
+										Goalkeepers and defenses who are facing powerhouse teams tend to get more opportunities for saves (for GK) and interceptions and clearances (for DEF). Look for bargains on value defenses, and go big on attackers.
+									</div>
+								</div>
+							</div>
+							<div class="card">
+								<div class="card__header" id="heading-1">
+									<h5 class="mb-0">
+										<button class="btn btn-link accordion__header-link collapsed" type="button" data-toggle="collapse" data-target="#collapse-1" aria-expanded="false" aria-controls="collapse-1">
+											Look Beyond Goals
+											<span class="accordion__header-link-icon"></span>
+										</button>
+									</h5>
+								</div>
+								<div id="collapse-1" class="collapse " aria-labelledby="heading-1" data-parent="#accordionFaqs">
+									<div class="card__content">
+										Midfielders are the most dependable source for high-upside performances. So, pick players who fill the stat sheet, even if they aren’t goal scorers — then look for them to have a big match if they do put one in the net.
+									</div>
+								</div>
+							</div>
+							<div class="card">
+								<div class="card__header" id="heading-2">
+									<h5 class="mb-0">
+										<button class="btn btn-link accordion__header-link collapsed" type="button" data-toggle="collapse" data-target="#collapse-2" aria-expanded="false" aria-controls="collapse-2">
+											Be Forward Thinking
+											<span class="accordion__header-link-icon"></span>
+										</button>
+									</h5>
+								</div>
+								<div id="collapse-2" class="collapse " aria-labelledby="heading-2" data-parent="#accordionFaqs">
+									<div class="card__content">
+										Forwards are the most boom-or-bust performers, since most of their points will come from goals. If you’re entering multiple lineups, consider using different combinations of forwards to expand your likelihood of picking up a hot scorer.
+									</div>
+								</div>
+							</div>
+							<div class="card">
+								<div class="card__header" id="heading-3">
+									<h5 class="mb-0">
+										<button class="btn btn-link accordion__header-link collapsed" type="button" data-toggle="collapse" data-target="#collapse-3" aria-expanded="false" aria-controls="collapse-3">
+											Starter Preference
+											<span class="accordion__header-link-icon"></span>
+										</button>
+									</h5>
+								</div>
+								<div id="collapse-3" class="collapse " aria-labelledby="heading-3" data-parent="#accordionFaqs">
+									<div class="card__content">
+										Availabilitypercentage indicator quickly tells you if a player is expected to start and if the player is confirmed to start. So,there is no guessing if a player is going to ride the bench or start a game.
+
+</div>
+								</div>
+							</div>
+							
+		
+						</div>
+						<!-- FAQs / End -->
+		
+					</div>
+				</div>
+		
+			</div>
+		</div>
+		
+		<!-- Content / End -->
+            
+<div>
+            
+            <!-- Livewire Scripts -->
+
+<script src="/livewire/livewire.js?id=940557fc56b15ccb9a2d" data-turbo-eval="false" data-turbolinks-eval="false" ></script>
+<script data-turbo-eval="false" data-turbolinks-eval="false" >
+    if (window.livewire) {
+	    console.warn('Livewire: It looks like Livewire\'s @livewireScripts JavaScript assets have already been loaded. Make sure you aren\'t loading them twice.')
+	}
+
+    window.livewire = new Livewire();
+    window.livewire.devTools(true);
+    window.Livewire = window.livewire;
+    window.livewire_app_url = '';
+    window.livewire_token = 'y97TPLcyPglBZcTjbRN7gqz3LutQ47aNX7unxevi';
+
+	/* Make sure Livewire loads first. */
+	if (window.Alpine) {
+	    /* Defer showing the warning so it doesn't get buried under downstream errors. */
+	    document.addEventListener("DOMContentLoaded", function () {
+	        setTimeout(function() {
+	            console.warn("Livewire: It looks like AlpineJS has already been loaded. Make sure Livewire\'s scripts are loaded before Alpine.\\n\\n Reference docs for more info: http://laravel-livewire.com/docs/alpine-js")
+	        })
+	    });
+	}
+
+	/* Make Alpine wait until Livewire is finished rendering to do its thing. */
+    window.deferLoadingAlpine = function (callback) {
+        window.addEventListener('livewire:load', function () {
+            callback();
+        });
+    };
+
+    let started = false;
+
+    window.addEventListener('alpine:initializing', function () {
+        if (! started) {
+            window.livewire.start();
+
+            started = true;
+        }
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+        if (! started) {
+            window.livewire.start();
+
+            started = true;
+        }
+    });
+</script>
+            </div>
+                            <!-- Footer
+            ================================================== -->
+            <footer id="footer" class="footer">
+		
+                <!-- Footer Widgets -->
+                <div class="footer-widgets">
+                    <div class="footer-widgets__inner">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-sm-6 col-lg-12">
+                                    <div class="footer-col-inner myfooter">
+                                        <div class="widget__content">
+                                                <p id="footer___phone"><i class="meta__item icon-envelope-open"></i>info@correctfan.com
+                                                <i class="meta__item icon-phone"></i>+234-813-2614337</p>
+                                                <div class="footer-logo_img">
+                                        <a href="">
+                                            <img src="/storage/logo.png" srcset="" alt="CorrectFan" class="footer-logo__img">
+                                                </a>
+                                                </div>
+                                                <div class="info-block__item info-block__item--nopadding">
+                                                        <ul class="social-links">
+                                                            <li class="social-links__item">
+                                                                <a href="#" class="social-links__link"><i class="fab fa-facebook"></i> Facebook</a>
+                                                            </li>
+                                                            <li class="social-links__item">
+                                                                <a href="#" class="social-links__link"><i class="fab fa-twitter"></i> Twitter</a>
+                                                            </li>
+                                                            <li class="social-links__item">
+                                                                <a href="#" class="social-links__link"><i class="fab fa-instagram"></i> Instagram</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            
+                </div>
+                <!-- Footer Widgets / End -->
+            
+               
+                <!-- Footer Secondary / End -->
+            </footer>
+            <!-- Footer / End -->
+        
+    </div>
+		<!-- Footer / End -->
+        <script src="../../js/jquery-migrate.min.js" ></script>
+        <script src="../../js/bootstrap.bundle.min.js" ></script>
+        <script src="../../js/core.js" ></script>
+        <script src="../../js/jquery.twitter.js" defer></script>
+        <script src="../../js/init.js" ></script>
+        <script type="text/javascript">
+            $("#slideshow > div:gt(0)").hide();
+
+            setInterval(function() { 
+            $('#slideshow > div:first')
+            .fadeOut(0)
+            .next()
+            .fadeIn(1000)
+            .end()
+            .appendTo('#slideshow');
+            }, 10000);
+
+            
+            var path = window.location.pathname;
+            var page = path.split("/").pop();
+           if(page == 'liveentry' || page == 'liveentry#'){
+                setInterval(function() { //live Entry Updates
+               var liveid =  document.getElementById('liveid').value;
+                if(liveid != ""){ //Leaderboard Already Click so show
+                    showlivehistory(liveid);
+                }
+                updatemainview();
+                }, 5000);
+           }
+
+           function updatemainview(){
+                for(i = 1; i < 1000; i++) {
+                    let newconid = "con"+i;
+                    let pid = document.getElementById(newconid);
+                    if(pid){
+                        cid = document.getElementById(newconid).firstChild.id;
+                        
+                    $.ajax({
+                        type:'GET',
+                        url:'/contest/getentryposition/'+cid,
+                        data:'_token = y97TPLcyPglBZcTjbRN7gqz3LutQ47aNX7unxevi',
+                        success:function(data) {
+                            var position = data.position;
+                            var status = data.status;
+                            //console.log(status);
+                            var dataupdate = '<span id="'+ cid +'"></span>'
+                            +'<span><i style="font-size: 25px;" class="'+ status +'"></i></span>'
+                            +'<span class="games_section_text">'+ position +'</span>';
+                            document.getElementById(newconid).innerHTML = dataupdate;
+                        },
+                        complete: function() {
+                                $('#loader').hide();
+                            },
+                        });
+
+                        //var myEleValue= myEle.value;
+                    }else{
+                        break;
+                    }
+                }
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,103 @@
+/*
+File Name: 		custom.css
+Description:  You can add your custom CSS here and it will overwrite template styles
+*/
+
+
+/*# sourceMappingURL=maps/custom.css.map *//*
+File Name: 		custom.css
+Description:  You can add your custom CSS here and it will overwrite template styles
+*/
+
+#player-listing-page div.card__header {
+    background-color: #4a3257;;
+}
+#player-listing-page div.card__header::before {
+    background-color: #362b45;
+}
+#player-listing-page table.player-listing-table tbody tr td:nth-of-type(2), 
+#player-listing-page table.player-listing-table tbody tr td:nth-of-type(3) {
+    font-weight: 900;
+}
+#player-listing-page table.player-listing-table tbody tr td:last-of-type {
+    text-align: center;
+}
+.footer-logo_img.mod-footer-logo_img {
+    left: 0;
+}
+.align-center {
+    text-align: center;
+}
+.mod-footer-widgets__inner {
+        padding-top: 20px;
+        padding-bottom: 10px;
+}
+.progress.player-progress {
+    top: 2px;
+}
+#player-details-page div.details-title {
+    font-weight: 900;
+    text-transform: capitalize;
+    color: #000;
+}
+@media (min-width: 1200px) {
+    #player-details-page .player-info__item--photo {
+        width: 400px;
+      }
+}
+@media only screen and (max-width: 991px) {
+    .header-mobile__inner {
+        height: 80px;
+    }
+    .header-logo__img {
+        max-width: 50%;
+    }
+    .burger-menu-icon {
+        top: 30px;
+    }
+    .header-mobile__search-icon::before, 
+    .header-mobile__search-icon::after {
+        top: 0%;
+    }
+    .footer-copyright {
+        text-align: left;
+      }
+      .footer-nav--right {
+        text-align: right;
+      }
+}
+@media (max-width:479px) {
+    .header-mobile__inner {
+        height: 80px;
+    }
+    .header-logo__img {
+        max-width: 45%;
+    }
+    .burger-menu-icon {
+        top: 30px;
+    }
+    .header-mobile__search-icon::before, 
+    .header-mobile__search-icon::after {
+        top: 0%;
+    }
+    #footer___phone {
+        float: none;
+        text-align: center;
+      }
+      .info-block__item--nopadding {
+        float: none;
+        text-align: center;
+        margin-top: 1rem;
+      }
+      #footer-social-media-links{
+        margin-bottom: 1rem;
+      }
+      .footer-copyright {
+        text-align: center;
+      }
+      .footer-nav--right {
+        text-align: center;
+      }
+}
+
+/*# sourceMappingURL=maps/custom.css.map */
