@@ -12134,7 +12134,7 @@ bottom: 40px;
             display: block;
             position: absolute;
             right: 34px;
-            top: 39px;
+            top: 30px;
             width: 24px;
             height: 24px;
             line-height: 24px;
@@ -46541,6 +46541,9 @@ Description:  You can add your custom CSS here and it will overwrite template st
         padding-left: 10px;
         padding-right: 10px;
 
+    }
+    .card_content > h4 {
+        font-size: 13px;
     }
 }
 /*Responsive for Mobile */
