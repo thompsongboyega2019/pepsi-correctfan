@@ -68,13 +68,13 @@ Description:  You can add your custom CSS here and it will overwrite template st
 }
 @media (max-width:479px) {
     .header-mobile__inner {
-        height: 60px;
+        height: 70px;
     }
     .header-logo__img {
         max-width: 45%;
     }
     .burger-menu-icon {
-        top: 20px;
+        top: 26px;
     }
     .header-mobile__search-icon::before, 
     .header-mobile__search-icon::after {
